@@ -19,10 +19,6 @@ This application serves as a back-end service, developed in Java using the **Spr
 1. **/addPerson (POST)**: Takes a JSON representation of a person object in the request body and saves them in the database. Returns HTTP 409 if a person with the same OIB already exists.
 2. **/suspendPerson (PATCH)**: Takes an OIB from the person from the path variable and changes the status to 'suspended'. Returns HTTP 400 if the person's status is inactive, or HTTP 404 if the person does not exist.
 3. **/reactivatePerson (PATCH)**: Works the same way as /suspendPerson but changes the person's status to ACTIVE.
-4. **/deletePerson (PATCH)**: Works the same way as /suspendPerson but changes the person's status to INACTIVE.
+4. **/deletePerson (DELETE)**: Works the same way as /suspendPerson but changes the person's status to INACTIVE.
 5. **/searchByOibs (GET)**: Returns persons from the database with a given OIB from the oibs list. Also writes the corresponding CSV file for every person that is found.
 6. **/searchByStatus (GET)**: Takes a request parameter statusStr and returns all persons with the given status.
-
-## **Conclusion**
-
-Bank App serves as a simplified model for managing credit card applications in a banking system. By handling person details and their statuses, it provides fundamental functionalities necessary for a credit card issuance process. Feel free to explore the code and adapt it to your needs.
